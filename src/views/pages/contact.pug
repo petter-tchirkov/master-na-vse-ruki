@@ -1,0 +1,48 @@
+extends ../layouts/master.pug
+
+block title
+  title Контакты
+
+block basicSeo
+  meta(name='description' content='Contact page')
+  meta(name='keywords', content='contact, page')
+  meta(name='author' content='')
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+block content
+
+  // Menu
+  +menu('contact')
+
+  //- Desktop page
+  .contact-page
+    .contact-page__container.container
+      h2.contact-page__title СВЯЖИЕТСЬ С НАМИ
+      h3.contact-page__subtitle Оставьте свой телефон, мы перезвоним вам в течение 10 минут
+      form.contact-page__form(method="POST")
+        // Hidden Required Fields
+        input(type='hidden' name='project_name' value='Мастер на все руки')
+        input(type='hidden' name='admin_email' value='info@master-na-vse-ruki.com.ua')
+        input(type='hidden' name='form_subject' value='Форма контактов')
+        // END Hidden Required Fields
+        input.contact-page__input._req.phone-input(type="text" name="phone" id="phone-contact" required placeholder="Ваш номер телефона")
+        input.contact-page__input._req.name-input(type="text" name="name" placeholder="Как к вам обращаться")
+        select(name="service-select" class="contact-page__select form__select _req")
+          option(value="Ремонт телевизоров") Ремонт телевизоров
+          option(value="Ремонт компьютеров") Ремонт компьютеров
+          option(value="Ремонт холодильников") Ремонт холодильников
+          option(value="Ремонт кондиционеров ") Ремонт кондиционеров 
+          option(value="Ремонт стиральных машин") Ремонт стиральных машин
+          option(value="Ремонт бойлеров") Ремонт бойлеров
+          option(value="Строительные работы") Строительные работы
+          option(value="Услуги электрика") Услуги электрика
+          option(value="Грузоперевозки") Грузоперевозки
+        input(type="textarea" name="text" class="contact-page__textarea message-input _req")
+        input(type="submit" name="submit" id="submit-contact" class="contact-page__submit _req" value="Отправить")
+        
+
+
+

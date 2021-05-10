@@ -1,0 +1,43 @@
+/* src/assets/styles/layout/_general.scss  */
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+html,
+body {
+  height: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.container{
+  margin: 0 auto;
+  padding: 0;  
+}
+
+body {
+  font-family: $quicksand;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  &:visited {
+    color: white;
+  }
+}
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}

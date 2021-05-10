@@ -1,0 +1,93 @@
+.header{
+  background-color: #000;
+  color: #fff;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  .container{
+    margin: 0 auto;
+    padding: 0;  
+  }
+  &__logo{
+    display: flex;
+    align-items: center;
+    a{
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      span{
+        align-items: center;
+        display: flex;
+        color: #fff;
+      }
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    span{
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-left: 20px;
+      display: block;
+    }
+  }
+  &__menu{
+    display: flex;
+    align-items: center;
+    .menu__list{
+      display: grid;
+      grid-gap: 13px;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0;
+    }
+    .menu__item{
+      text-decoration: none;
+      list-style-type: none;
+      a{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $light;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__contact{
+    display: grid;
+    .contact__item{
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 210px;
+      justify-items: end;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      a{
+        color: $light;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px){
+  .container{
+    padding: 0 15px;
+  }
+  .header__logo span, .header__menu{
+    display: none !important;
+  }
+  .header__contact{
+    .contact__item{
+      grid-template-columns: auto 1fr;
+      span{
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}

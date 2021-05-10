@@ -1,0 +1,167 @@
+extends ./layouts/master.pug
+
+block title
+  title Мастер на все руки
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+block content
+
+  // Menu
+  +menu('home')
+
+  //- Desktop page
+  main.main
+    .main__wrapper
+      .main__container.container
+        h1.main__title
+          | СЕРВИС БЫТОВЫХ УСЛУГ
+          br
+          | В УКРАИНЕ
+        h2.main__subtitle
+          | Приедем в течении 3-х часов, после Вашего обращения!
+          br
+          | Работаем по всем населенным пунктам Украины
+        form.main__form(method="POST")
+          // Hidden Required Fields
+          input(type='hidden' name='project_name' value='Мастер на все руки')
+          input(type='hidden' name='admin_email' value='info@master-na-vse-ruki.com.ua')
+          input(type='hidden' name='form_subject' value='Главная')
+          input(type="hidden" value="Пользователь не указал имени").name-input
+          input(type="hidden" value="Пользователь не указал деталей заказа").message-input
+          // END Hidden Required Fields
+          select#service.form__select(name='service')
+            option(value="Ремонт телевизоров") Ремонт телевизоров
+            option(value="Ремонт компьютеров") Ремонт компьютеров
+            option(value="Ремонт холодильников") Ремонт холодильников
+            option(value="Ремонт кондиционеров ") Ремонт кондиционеров
+            option(value="Ремонт стиральных машин") Ремонт стиральных машин
+            option(value="Ремонт бойлеров") Ремонт бойлеров
+            option(value="Строительные работы") Строительные работы
+            option(value="Услуги электрика") Услуги электрика
+            option(value="Грузоперевозки") Грузоперевозки
+          input.form__input._req.main__phone.phone-input(type='text' id="phone-main" name="phone" placeholder='Ваш номер телефона')
+          input.form__submit(type='submit' id="submit-main" value='Вызвать мастера')
+  section.services
+    .services__container.container
+      .services__title
+        hr
+        h2 Услуги
+        hr
+      ul.services__list
+        a(href='/blog#tv')
+          .services__item
+            img.item__logo(src='/assets/images/tv.svg' alt='')
+            h3.item__name Телевизоры
+            p.item__brief
+              | Комплексный спектр услуг по ремонту ламповых (кинескопных), LCD телевизоров, а также плазменных панелей всех известных марок с гарантией
+              | от 6 до 12 месяцев
+        a(href='/blog#pc')
+          .services__item
+            img.item__logo(src='/assets/images/pc.svg' alt='')
+            h3.item__name Компьютеры
+            p.item__brief
+              | Ремонт как внутренних комплектующих, так и установка различного типа программного обеспечения, чистка ноутбуков и ПК на дому! Гарантия от 8 до 12 месяцев!
+        a(href='/blog#fridge')
+          .services__item
+            img.item__logo(src='/assets/images/fridge.svg' alt='')
+            h3.item__name Холодильники
+            p.item__brief
+              | Квалифицированный ремонт бытовых и промышленных холодильных камер любых моделей и торговых марок по разумным ценам. На выполненные работы предоставляется гарантия от 6 до 12 месяцев.
+        a(href='/blog#conditioner')
+          .services__item
+            img.item__logo(src='/assets/images/conditioner.svg' alt='')
+            h3.item__name Кондиционеры
+            p.item__brief
+              | Комплексный ремонт и сервисное обслуживание промышленных и домашних кондиционеров различных производителей с гарантией качества от 5 до 12 месяцев!
+        a(href='/blog#boiler')
+          .services__item
+            img.item__logo(src='/assets/images/boiler.svg' alt='')
+            h3.item__name Бойлеры
+            p.item__brief
+              | Ремонт бойлеров любой сложности: чистка и замена деталей, любых производителей с гарантией 6-12 месяцев!
+        a(href='/blog#washing-machine')
+          .services__item
+            img.item__logo(src='/assets/images/washing-machine.svg' alt='')
+            h3.item__name Стиральные машины
+            p.item__brief
+              | Сервисное обслуживание и устранение любых поломок стиральных машинок автомат и полуавтомат, горизонтальной и вертикальной загрузки. Отечественного и импортного производства. Гарантия 1 год.
+        a(href='/blog#building')
+          .services__item
+            img.item__logo(src='/assets/images/building.svg' alt='')
+            h3.item__name Строительные работы
+            p.item__brief
+              | Сервисное обслуживание и устранение любых поломок стиральных машинок автомат и полуавтомат, горизонтальной и вертикальной загрузки. Отечественного и импортного производства. Гарантия 1 год.
+        a(href='/blog#electrician')
+          .services__item
+            img.item__logo(src='/assets/images/electrician.svg' alt='')
+            h3.item__name Услуги электрика
+            p.item__brief
+              | Электромонтажные работы любой сложности. Ремонт, замена и монтаж электропроводки, фурнитуры (розетки, выключатели), освещения, элементов щитка распределительного, а также другие виды работ по реанимации и модернизации электрических сетей и элементов Вашего помещения (Квартиры, Дома, Офиса и др.)
+        a(href='/blog#transport')
+          .services__item
+            img.item__logo(src='/assets/images/transport.svg' alt='')
+            h3.item__name Грузоперевозки
+            p.item__brief
+              | Если вам нужно перевезти личные вещи, или стройматериалы? Это к нам, впечатлительные размеры и чистота машин за скромные цены, вас приятно удивят. Каждый автомобиль оборудован крепежными ремнями, упаковочным материалом, и главное опытные грузчики и пунктуальные водители не заставят вас ждать автомобиль !
+  section.didnt-find
+    h2.didnt-find__title Не нашли нужную услугу?
+    h3.didnt-find__subtitle Звоните и мы подберём вам мастера!
+    ul.didnt-find__contact
+      li
+        img(src='/assets/images/phone.svg' alt='')
+        span +38 (050) 824-84-58
+      li
+        img(src='/assets/images/phone.svg' alt='')
+        span +38 (050) 824-84-58
+    .didnt-find__stripes
+  section.workflow
+    .workflow__container.container
+      .workflow__title
+        hr
+        h2 Как мы работаем?
+        hr
+      ul.workflow__list
+        li.workflow__item
+          span 1
+          h3 Свяжитесь с нами
+          p Опишите что и когда нужно сделать
+        li.workflow__item
+          span 2
+          h3 Мастер связывается с Вами
+          p Выберите компетентного кандидата для вашего задания
+        li.workflow__item
+          span 3
+          h3 Закройте заявку
+          p Оставьте отзыв и оцените специалиста
+  section.advantages
+    .advantages__container.container
+      .advantages__title
+        hr
+        h2 Наши примущества
+        hr
+      ul.advantages__list
+        li
+          img(src='/assets/images/priority.svg' alt='')
+          span Приоритет на качество и безопасность
+        li
+          img(src='/assets/images/reaction.svg' alt='')
+          span Моментальная реакция на обращение
+        li
+          img(src='/assets/images/time.svg' alt='')
+          span Мастера доступны 24/7
+        li
+          img(src='/assets/images/service.svg' alt='')
+          span Широкая сфера оказываемых услуг
+        li
+          img(src='/assets/images/clients.svg' alt='')
+          span Более 100 тысяч активных клиентов
+        li
+          img(src='/assets/images/price.svg' alt='')
+          span Самая доступная цена на рынке
+  section.help
+    .help__container.container
+      h2.help__title Помочь с выбором подходящего специалиста?
+      button.help__btn Оформить заявку

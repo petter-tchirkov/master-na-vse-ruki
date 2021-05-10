@@ -1,0 +1,209 @@
+extends ../layouts/master.pug
+
+block title
+  title Услуги мастеров
+
+block basicSeo
+  meta(name='description' content='Contact page')
+  meta(name='keywords', content='contact, page')
+  meta(name='author' content='')
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+block content
+
+  // Menu
+  +menu('contact')
+
+  //- Desktop page
+  .serv-page
+    .serv-page__container.container
+      h2.serv-page__title КАКИЕ УСЛУГИ МЫ ОКАЗЫВАЕМ
+      .serv-page__item#tv
+        .serv-page__info
+          h3 Ремонт телевизоров
+          ul.serv-page__services
+            li
+              p Замена матриц
+              span от 430 грн
+            li
+              p Замена ламп
+              span от 150 грн
+            li
+              p Замена шлейфов
+              span от 350 грн
+            li
+              p Замена экранов
+              span от 430 грн
+            li
+              p Ремонт тюнеров
+              span от 300 грн
+        .serv-page__image
+          img(src="/assets/images/tv.png", alt="")
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#pc
+        .serv-page__image
+          img(src="/assets/images/pc.png", alt="")
+        .serv-page__info
+          h3 Ремонт компьютеров
+          ul.serv-page__services
+            li
+              p Установка Windows
+              span от 250 грн
+            li
+              p Чистка ноутбука и замена термопасты
+              span от 300 грн
+            li
+              p Подбор и замена блока питания
+              span от 150 грн
+            li
+              p Подбор и замена видеокарты
+              span от 200 грн
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#fridge
+        .serv-page__info
+          h3 Ремонт холодильников
+          ul.serv-page__services
+            li
+              p Диагностика неполадок
+              span от 250 грн
+            li
+              p Заправка холодильника фреоном R12, R134a, R600a
+              span от 300 грн
+            li
+              p Ремонт электронного модуля
+              span от 250 грн
+            li
+              p Замена экранов
+              span от 450 грн
+            li
+              p Диагностика в случае ремонта
+              span бесплатно!
+        .serv-page__image
+          img(src="/assets/images/fridge.png", alt="")
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#conditioner
+        .serv-page__image
+          img(src="/assets/images/conditioner.png", alt="")
+        .serv-page__info
+          h3 Ремонт кондиционеров
+          ul.serv-page__services
+            li
+              p Ремонт платы управления блока
+              span от 700 грн
+            li
+              p Устранение пропусков фреона
+              span от 400 грн
+            li
+              p Замена теплового реле
+              span от 800 грн
+            li
+              p Ремонт крыльчатки вентилятора
+              span от 500 грн
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#washing-machine
+        .serv-page__info
+          h3 Ремонт стиральных машин
+          ul.serv-page__services
+            li
+              p Замена ТЭНа
+              span от 300 грн
+            li
+              p Ремонт электронных плат
+              span от 350 грн
+            li
+              p Чистка и замена фильтров
+              span от 100 грн
+            li
+              p Замена подшипников
+              span от 400 грн
+            li
+              p Диагностика в случае ремонта
+              span бесплатно!
+        .serv-page__image
+          img(src="/assets/images/washing-machine.png", alt="")
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#boiler
+        .serv-page__image
+          img(src="/assets/images/boiler.png", alt="")
+        .serv-page__info
+          h3 Ремонт бойлеров
+          ul.serv-page__services
+            li
+              p Замена ТЭНа
+              span от 250 грн
+            li
+              p Замена фланца
+              span от 200 грн
+            li
+              p Замена термостата
+              span от 150 грн
+            li
+              p Чистка от грязи
+              span от 200 грн
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#building
+        .serv-page__info
+          h3 Строительные работы
+          ul.serv-page__services
+            li
+              p Укладка плитки
+              span от 100 грн
+            li
+              p Стяжка пола
+              span от 150 грн
+            li
+              p Покраска стен
+              span от 90 грн
+            li
+              p Кровельные работы
+              span от 200 грн
+            li
+              p Диагностика в случае ремонта
+              span бесплатно!
+        .serv-page__image
+          img(src="/assets/images/building.png", alt="")
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#electrician
+        .serv-page__image
+          img(src="/assets/images/electrician.png", alt="")
+        .serv-page__info
+          h3 Услуги электрика
+          ul.serv-page__services
+            li
+              p Монтаж розеток
+              span от 70 грн
+            li
+              p Ремонт включателей
+              span от 100 грн
+            li
+              p Монтаж счетчика
+              span от 250 грн
+            li
+              p Установка люстры
+              span от 300 грн
+        .serv-page__cta
+          button.change__page Оформить заявку
+      .serv-page__item#transport
+        .serv-page__info
+          h3 Грузоперевозки
+          ul.serv-page__services
+            li
+              p Аренда автомобиля
+              span от 250 грн / час
+            li
+              p Помощь грузчиков
+              span от 100 грн / час
+        .serv-page__image
+          img(src="/assets/images/transport.png", alt="")
+        .serv-page__cta
+          button.change__page Оформить заявку
